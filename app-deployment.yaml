@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubapp4
+  labels:
+    name: kubapp4
+spec:
+  selector:
+    matchLabels:
+      name: kubapp4
+  template:
+    metadata:
+      labels:
+        name: kubapp4
+    spec:
+      containers:
+        - name: kubapp4
+          image: fives-image
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8081
