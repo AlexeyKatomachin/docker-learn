@@ -15,10 +15,10 @@ pipeline {
                     archive 'target*//*.jar'
                 }
             }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
+            stage('Test') {
+                steps {
+                    echo 'Testing..'
+                }
             }
         }
     }
