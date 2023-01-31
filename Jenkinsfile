@@ -9,9 +9,7 @@ pipeline {
          stage('Build') {
              steps {
                  bat 'mvn -DskipTests clean package'
-                 def pom = readMavenPom file: 'pom.xml'
-                 print pom.version
-                 junit '**//*target/surefire-reports/TEST-*.xml'
+                 print 'mvn -version'
                  archive 'target*//*.jar'
              }
          }
