@@ -1,10 +1,13 @@
-node{
-    stage('init'){
-      //init sample
-    }
-    stage('build'){
-        withMaven(maven: 'mvn') {
-            sh "mvn -B -DskipTests clean package"
+pipeline {
+    agent any
+    tools {
+        maven 'M3'
+      }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
         }
     }
 }
